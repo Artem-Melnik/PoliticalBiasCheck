@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Grabber</title>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <button id="grabText">Grab Text</button>
+    <script src="popup.js"></script>
+    <script nonce="M2MwZTkzNDQtODU3My00ZTVjLTg1OTUtYjBmZDFmZDdkYmJi">
+
+    const text = document.getElementsByClassName("css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3");
+
+    console.log('test', imgs.length);
+    console.log('text:', text);
+
+    for (var i = 0; i < text.length; i++) {
+        var innerText = text[i].innerText;
+        alert("Price: " + innerText);
+    }
+        // document.getElementById("grabText").addEventListener("click", () => {
+        // chrome.runtime.sendMessage({ action: "grabText" });
+        // });
+    </script>
+  <!-- <script>
+    document.getElementById("grabText").addEventListener("click", () => {
+      chrome.runtime.sendMessage({ action: "grabText" });
+    });
+  </script> -->
+</body>
+</html>

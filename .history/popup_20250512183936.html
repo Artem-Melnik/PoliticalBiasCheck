@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Grabber</title>
+</head>
+<body>
+  <button id="grabText">Grab Text</button>
+  <script>
+    document.getElementById("grabText").addEventListener("click", () => {
+      chrome.runtime.sendMessage({ action: "grabText" });
+    });
+  </script>
+</body>
+</html>

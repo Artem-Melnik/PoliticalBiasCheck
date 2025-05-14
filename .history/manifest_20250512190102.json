@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "BobRossRocks",
+    "version": "1.0.0",
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://x.com/*",
+                "https://www.pinterest.com/*",
+                "https://x.com/*"
+            ],
+            "js": [
+                "Content.js"
+            ]
+        }
+    ]
+}
