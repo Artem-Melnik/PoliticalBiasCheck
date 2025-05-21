@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     grabTextButton.addEventListener("click", async () => {
         try {
-            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
 
             if (tab.id) {
                 await chrome.scripting.executeScript({
-                    target: { tabId: tab.id },
-                    func: grabTextFromPage
+                    target: {tabId: tab.id},
+                    func: main
                 });
             }
         } catch (error) {
@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let postsLimit = null;
 
         //TODO: Fix getting multiple tweets without comments (determine location of tweets only, without comments)
-        if (window.location.host == "x.com") {
+        if (window.location.host === "x.com") {
             query = '[data-testid="tweetText"] > span';
             if (window.location.href.includes("/status/")) {
                 postsLimit = 1;
             }
 
-        } else if (window.location.host == "bsky.app") {
+        } else if (window.location.host === "bsky.app") {
             query = '[data-testid="postText"], [data-testid="postThreadItem-by-nytimes.com"] > div:nth-child(2) > div > div';
             if (window.location.href.includes("/post/")) {
                 postsLimit = 1;
@@ -59,4 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     }
+
+    //ADD API key here!
+    const ai = new GoogleGenAI({apiKey: "YOUR_API_KEY"});
+
+    async function main() {
+        const response = await ai.models.generateContent({
+            model: "gemini-2.0-flash",
+            contents: "Explain how AI works in a few words",
+        });
+        console.log(response.text);
+    }
+
+    main();
 });

@@ -1,0 +1,17 @@
+{
+  "name": "politicalbiascheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "popup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Artem-Melnik/PoliticalBiasCheck.git"
+  },
+  "private": true,
+  "dependencies": {
+    "@google/genai": "^0.14.0"
+  }
+}
