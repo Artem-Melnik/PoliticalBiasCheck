@@ -1,23 +1,23 @@
 {
-    "manifest_version": 3,
-    "name": "GrabText",
-    "version": "1.0.0",
-    "permissions": [
-        "scripting",
-        "activeTab"
-    ],
-    "action": {
-        "default_popup": "popup.html"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://x.com/*",
-                "https://bsky.app/*"
-            ],
-            "js": [
-                "popup.js"
-            ]
-        }
-    ]
+  "manifest_version": 3,
+  "name": "PoliticalBiasCheck",
+  "version": "1.0.0",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://bsky.app/*"
+      ],
+      "js": [
+        "popup.js"
+      ]
+    }
+  ]
 }

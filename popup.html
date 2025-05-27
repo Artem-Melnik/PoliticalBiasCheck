@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Text Grabber</title>
+    <title>Political Bias Check</title>
     <script src="./generative-ai.js"></script>
     <script src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css"/>
 </head>
 <body>
+<label for="summaryType">Analysis Type</label>
+<select id="summaryType">
+    <option value="bias">Bias</option>
+    <option value="misinformation">Misinformation</option>
+    <option value="emotion">Emotion</option>
+</select>
 <button id="grabText">Grab Text</button>
 </body>
 </html>
